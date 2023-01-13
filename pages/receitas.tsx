@@ -33,8 +33,8 @@ const Receitas = ({ data }: { data: ChartPoint[] }) => {
 export default Receitas
 
 export async function getServerSideProps() {
-  const res = await fetch(` http://localhost:3000/api/receitas `)
-  const data = await res.json()
+  const receitas = await fetch(` http://localhost:3000/api/receitas `)
+  const data = await receitas.json()
   return {
     props: {
       data
